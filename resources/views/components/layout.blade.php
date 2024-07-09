@@ -1,3 +1,5 @@
+{{-- Layout has the HEADER and the FOOTER and in btween the slotw --}}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
