@@ -12,8 +12,13 @@ class ExampleController extends Controller
         // data loaded from DB
         $ourName = 'Nathan';
         $catName = 'Miao';
+
+        // use allAnimals into blade
+        $animals = ["Dog", "Cat", "Fish"];
+
+
         // use view() to call the blade 
-        return view('homepage', ['name' => $ourName, 'catname' => $catName]);
+        return view('homepage', ['name' => $ourName, 'catname' => $catName, 'allAnimals' => $animals]);
     }
 
     public function aboutPage()

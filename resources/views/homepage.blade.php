@@ -16,6 +16,12 @@
     {{-- $name comes from 'name' => $ourName --}}
     <h3> {{ $catname }} </h3>
 
+    <ul>
+        @foreach($allAnimals as $animal)
+        <li> {{$animal}} </li>
+        @endforeach
+    </ul>
+
 
 
 </body>
