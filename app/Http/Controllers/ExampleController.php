@@ -9,7 +9,11 @@ class ExampleController extends Controller
 {
     public function homepage()
     {
-        return '<h1>Homepage!!!</h1><a href="/about">View the about page</a>';
+        // data loaded from DB
+        $ourName = 'Nathan';
+        $catName = 'Miao';
+        // use view() to call the blade 
+        return view('homepage', ['name' => $ourName, 'catname' => $catName]);
     }
 
     public function aboutPage()
