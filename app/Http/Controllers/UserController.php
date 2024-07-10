@@ -10,6 +10,16 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 
+    public function showCorrectHomepage()
+    {
+        // use auth method and check on it
+        if (auth()->check()) {
+            return view('homepage-feed');
+        } else {
+            return view('homepage');
+        }
+    }
+
     public function login(Request $request)
     {
         $incomingFields = $request->validate([
@@ -25,10 +35,6 @@ class UserController extends Controller
             return "Sorry";
         }
     }
-
-
-
-
 
     // Request and $request
     public function register(Request $request)

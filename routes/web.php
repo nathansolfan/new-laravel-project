@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExampleController;
 
 // ( '/', [a,b]) where a = class, b = actual page
-Route::get('/', [ExampleController::class, "homepage"]);
+Route::get('/', [UserController::class, "showCorrectHomepage"]);
 
 Route::get('/about', [ExampleController::class, "aboutPage"]);
 
