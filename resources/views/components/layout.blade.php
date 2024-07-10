@@ -18,7 +18,12 @@
     <header class="header-bar mb-3">
       <div class="container d-flex flex-column flex-md-row align-items-center p-3">
         <h4 class="my-0 mr-md-auto font-weight-normal"><a href="/" class="text-white">OurApp</a></h4>
-        <form action="#" method="POST" class="mb-0 pt-2 pt-md-0">
+        {{-- change # to /login for the path --}}
+        <form action="/login" method="POST" class="mb-0 pt-2 pt-md-0">
+          
+          {{-- CSF token --}}
+          @csrf
+
           <div class="row align-items-center">
             <div class="col-md mr-0 pr-md-0 mb-3 mb-md-0">
               <input name="loginusername" class="form-control form-control-sm input-dark" type="text" placeholder="Username" autocomplete="off" />

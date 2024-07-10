@@ -11,3 +11,4 @@ Route::get('/about', [ExampleController::class, "aboutPage"]);
 
 // takes 2 args, the path and func/method
 Route::post('/register', [UserController::class, 'register']);
+Route::post('/login', [UserController::class, 'login']);

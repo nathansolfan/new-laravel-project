@@ -9,6 +9,25 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+
+    public function login(Request $request)
+    {
+        $incomingFields = $request->validate([
+            'loginusername' => 'required',
+            'loginpassword' => 'required'
+        ]);
+
+        if (auth()->attempt(['username' => $incomingFields['loginusername'], 'password' => $incomingFields['loginpassword']])) {
+            return 'Congratz';
+        } else {
+            return "Sorry";
+        }
+    }
+
+
+
+
+
     // Request and $request
     public function register(Request $request)
     {
