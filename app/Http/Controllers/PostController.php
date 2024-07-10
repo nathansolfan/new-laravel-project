@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     //
+    // to display the page - view() and the name of the blade file
     public function showCreateForm()
     {
-        return 'hello!!';
+        return view('create-post');
     }
 }
