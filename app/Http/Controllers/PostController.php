@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -19,6 +20,9 @@ class PostController extends Controller
         $incomingFields['body'] = strip_tags($incomingFields['body']);
         // after = is the dinamic way
         $incomingFields['user_id'] = auth()->id();
+
+        // to create SQL stmt to save into DB
+        Post::create($incomingFields);
 
 
         return 'hey!!';
