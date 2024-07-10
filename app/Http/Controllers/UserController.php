@@ -9,6 +9,11 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    public function logout()
+    {
+        auth()->logout();
+        return 'You are not logout';
+    }
 
     public function showCorrectHomepage()
     {
