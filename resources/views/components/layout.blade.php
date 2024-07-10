@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/main.css" />
   </head>
+
+
   <body>
     <header class="header-bar mb-3">
       <div class="container d-flex flex-column flex-md-row align-items-center p-3">
@@ -62,6 +64,16 @@
       </div>
     </header>
     <!-- header ends here -->
+
+    <!-- only if true display HTML-->
+    @if (session()->has('success'))
+    <div class="container container--narrow">
+      <div class="alert alert-success text-center">
+        {{-- display the little green box with login/out --}}
+        {{session('success')}}
+      </div>
+    </div>
+    @endif
 
     {{$slot}}
 

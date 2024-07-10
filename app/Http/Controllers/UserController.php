@@ -12,7 +12,8 @@ class UserController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect('/');
+        // redirect()->with()
+        return redirect('/')->with('success', 'You have sucessfully logged out');
     }
 
     public function showCorrectHomepage()
@@ -35,7 +36,7 @@ class UserController extends Controller
         if (auth()->attempt(['username' => $incomingFields['loginusername'], 'password' => $incomingFields['loginpassword']])) {
             // -> to look inside
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect('/')->with('success', 'You have successfully logged in.');
         } else {
             return "Sorry";
         }
