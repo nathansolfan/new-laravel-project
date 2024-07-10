@@ -75,6 +75,16 @@
     </div>
     @endif
 
+     <!-- only if true display HTML-->
+     @if (session()->has('failure'))
+     <div class="container container--narrow">
+       <div class="alert alert-danger text-center">
+         {{-- display the little green box with login/out --}}
+         {{session('failure')}}
+       </div>
+     </div>
+     @endif
+
     {{$slot}}
 
     <!-- footer begins -->
