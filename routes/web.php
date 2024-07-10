@@ -1,15 +1,18 @@
 <?php
 // ROUTES
+
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\PostController;
 
+// USER ROUTES
 // ( '/', [a,b]) where a = class, b = actual page
 Route::get('/', [UserController::class, "showCorrectHomepage"]);
-
-Route::get('/about', [ExampleController::class, "aboutPage"]);
-
 // takes 2 args, the path and func/method
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout']);
+
+// BLOG ROUTES
+Route::get('/create-post', [PostController::class, 'showCreateForm']);
