@@ -7,8 +7,20 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     //
-    public function storeNewPost()
+    public function storeNewPost(Request $request)
     {
+        $incomingFields = $request->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        // strip_tags for malicious code
+        $incomingFields['title'] = strip_tags($incomingFields['title']);
+        $incomingFields['body'] = strip_tags($incomingFields['body']);
+        // after = is the dinamic way
+        $incomingFields['user_id'] = auth()->id();
+
+
         return 'hey!!';
     }
 
