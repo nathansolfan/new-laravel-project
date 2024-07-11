@@ -11,4 +11,10 @@ class Post extends Model
     // to pass all the data from 1 array
 
     protected $fillable = ['title', 'body', 'user_id'];
+
+    public function user()
+    {
+        // $this-> represents the blog class as whole
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

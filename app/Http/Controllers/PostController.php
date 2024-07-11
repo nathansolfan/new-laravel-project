@@ -30,10 +30,11 @@ class PostController extends Controller
         $incomingFields['user_id'] = auth()->id();
 
         // to create SQL stmt to save into DB
-        Post::create($incomingFields);
+        $newPost = Post::create($incomingFields);
 
 
-        return 'hey!!';
+        // redict user to the post once created and display msg on sucess
+        return redirect("/post/{$newPost->id}")->with('suceess', 'New Post successfully created');
     }
 
     // to display the page - view() and the name of the blade file
