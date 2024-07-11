@@ -1,5 +1,7 @@
 <x-layout>
 
+  
+
     <div class="container py-md-5 container--narrow">
         <div class="text-center">
             {{-- {{auth()->user()->username}}  to display users name--}}
