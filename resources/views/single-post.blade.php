@@ -20,7 +20,8 @@
   
         <div class="body-content">
           {{-- clear the previous placehnolder text --}}
-          {{$post->body}}
+          {{-- {{$post->body}} = this is normally done, but to display markdown --}}
+          {!! $post->body !!}
         </div>
       </div>
 </x-layout>
