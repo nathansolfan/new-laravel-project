@@ -8,14 +8,16 @@ use App\Http\Controllers\PostController;
 
 // USER ROUTES
 // ( '/', [a,b]) where a = class, b = actual page
-Route::get('/', [UserController::class, "showCorrectHomepage"]);
+// nr30 - / labels login if user needs to login using ->name()
+Route::get('/', [UserController::class, "showCorrectHomepage"])->name('login');
 // takes 2 args, the path and func/method
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // BLOG ROUTES
-Route::get('/create-post', [PostController::class, 'showCreateForm']);
+// nr30 - add ->middleware('auth) - 1 example like 'guest'
+Route::get('/create-post', [PostController::class, 'showCreateForm'])->middleware('auth');
 // POST when created post
 Route::post('/create-post', [PostController::class, 'storeNewPost']);
 

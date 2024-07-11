@@ -50,6 +50,11 @@ class PostController extends Controller
     // to display the page - view() and the name of the blade file
     public function showCreateForm()
     {
+        // check if the user is ! not logged - middleware comes in place
+        // if (!auth()->check()) {
+        //     return redirect('/');
+        // }
+
         return view('create-post');
     }
 }
