@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //
-    public function viewSinglePost()
+    // type hinting video 27 - 12min
+    public function viewSinglePost(Post $post)
     {
-        return view('single-post');
+        // ['post' => $post] to pass the data 
+        return view('single-post', ['post' => $post]);
     }
 
 
