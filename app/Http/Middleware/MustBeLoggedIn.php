@@ -15,6 +15,14 @@ class MustBeLoggedIn
      */
     public function handle(Request $request, Closure $next): Response
     {
+
+
+        if (auth()->check()) {
+            return $next($request);
+        }
+        return redirect('/')->with('failure', 'You must be logged in');
+
+        // next simply says its ok go to next request
         return $next($request);
     }
 }

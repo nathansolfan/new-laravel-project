@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                Log::info('User is authenticated. Redirecting from: ' . $request->url());
+                // Log::info('User is authenticated. Redirecting from: ' . $request->url());
                 return redirect('/')->with('failure', 'Only guests can do that.');
             }
         }

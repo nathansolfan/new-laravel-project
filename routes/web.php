@@ -13,14 +13,14 @@ use App\Http\Controllers\PostController;
 Route::get('/', [UserController::class, "showCorrectHomepage"])->name('login');
 Route::post('/register', [UserController::class, 'register'])->middleware('guest');
 Route::post('/login', [UserController::class, 'login'])->middleware('guest');
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+Route::post('/logout', [UserController::class, 'logout'])->middleware('mustBeLoggedIn');
 
 // BLOG ROUTES
 // nr30 - add ->middleware('auth) - 1 example like 'guest'
-Route::get('/create-post', [PostController::class, 'showCreateForm'])->middleware('auth');
+Route::get('/create-post', [PostController::class, 'showCreateForm'])->middleware('mustBeLoggedIn');
 
 
 // POST when created post
-Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('auth');
+Route::post('/create-post', [PostController::class, 'storeNewPost'])->middleware('mustBeLoggedIn');
 Route::get('/post/{post}', [PostController::class, 'viewSinglePost']);
 // viewSinglePost has the same name on the PostController
