@@ -17,7 +17,7 @@ Route::post('/logout', [UserController::class, 'logout']);
 
 // BLOG ROUTES
 // nr30 - add ->middleware('auth) - 1 example like 'guest'
-Route::get('/create-post', [PostController::class, 'showCreateForm'])->middleware('auth');
+Route::get('/create-post', [PostController::class, 'showCreateForm'])->middleware('guest');
 // POST when created post
 Route::post('/create-post', [PostController::class, 'storeNewPost']);
 
