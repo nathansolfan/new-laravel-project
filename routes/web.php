@@ -18,3 +18,6 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/create-post', [PostController::class, 'showCreateForm']);
 // POST when created post
 Route::post('/create-post', [PostController::class, 'storeNewPost']);
+
+Route::get('/post/{post}', [PostController::class, 'viewSinglePost']); 
+// viewSinglePost has the same name on the PostController

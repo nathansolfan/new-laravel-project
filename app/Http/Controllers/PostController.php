@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     //
+    public function viewSinglePost()
+    {
+        return view('single-post');
+    }
+
+
+
     public function storeNewPost(Request $request)
     {
         $incomingFields = $request->validate([
@@ -27,7 +34,6 @@ class PostController extends Controller
 
         return 'hey!!';
     }
-
 
     // to display the page - view() and the name of the blade file
     public function showCreateForm()
