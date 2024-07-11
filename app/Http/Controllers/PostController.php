@@ -24,8 +24,6 @@ class PostController extends Controller
         return view('single-post', ['post' => $post]);
     }
 
-
-
     public function storeNewPost(Request $request)
     {
         $incomingFields = $request->validate([

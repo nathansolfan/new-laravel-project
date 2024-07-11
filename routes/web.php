@@ -14,7 +14,6 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 // User related routes
 Route::get('/', [UserController::class, "showCorrectHomepage"])->name('login');
 Route::post('/register', [UserController::class, 'register'])->middleware('guest');
