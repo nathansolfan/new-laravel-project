@@ -17,7 +17,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->longText('body');
-            // user alter, constrained extra check
+            // user alter, constrained: if the author dont exist and dont match
+            // onDelete() - cascade delete all posts
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }

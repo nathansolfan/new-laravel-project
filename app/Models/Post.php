@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    // to pass all the data from 1 array
 
+    // to pass all the data from 1 array - check Post::create($incomingFields) on PostController
     protected $fillable = ['title', 'body', 'user_id'];
 
     public function user()
