@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
 
+    // Post $pizza means that the incoming value from the route web.php 
+    public function viewSinglePost(Post $post)
+    {
+        return view('single-post', ['post' => $post]);
+    }
+
+
+
+
     public function storeNewPost(Request $request)
     {
         //title and body of the blog

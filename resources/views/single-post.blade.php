@@ -1,6 +1,7 @@
 <x-layout>
     <div class="container py-md-5 container--narrow">
         <div class="d-flex justify-content-between">
+          {{-- dinamic way to import the title using the $post from the PostController --}}
           <h2>{{$post->title}}</h2>
           <span class="pt-2">
             <a href="#" class="text-primary mr-2" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
