@@ -14,7 +14,7 @@
         <p class="text-muted small mb-4">
           <a href="#"><img class="avatar-tiny" src="https://gravatar.com/avatar/f64fc44c03a8a7eb1d52502950879659?s=128" /></a>
           {{-- on the {{}}  take the funct name after $post->...  --}}
-          {{-- after user-> we get an object --}}
+          {{-- after user-> we get an object and user can also be like pizza--}} 
           Posted by <a href="#">{{$post->user->username}}</a> on {{$post->created_at->format('n/j/Y')}}
           {{-- to update the date $post-> name table -> then format() --}}
         </p>

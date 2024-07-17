@@ -21,7 +21,7 @@ Route::post('/login', [UserController::class, 'login'])->middleware('guest');
 Route::post('/logout', [UserController::class, 'logout']); // Removed middleware
 
 // Blog post related routes
-Route::get('/create-post', [PostController::class, 'showCreateForm']); // Removed middleware
+Route::get('/create-post', [PostController::class, 'showCreateForm'])->middleware('auth'); // Removed middleware
 Route::post('/create-post', [PostController::class, 'storeNewPost']); // Removed middleware
 
 // dont have to be named post, it express dinamic {}

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 
 class PostController extends Controller
 {
@@ -36,7 +38,9 @@ class PostController extends Controller
 
         //to save into DB
         //2nd: to pass all the $incomingFields without using the array
-        Post::create($incomingFields);
+        $newPost = Post::create($incomingFields);
+
+        return redirect("/post/{$newPost->id}")->with('success', 'New Post successfully created');
 
         // just returning hey to the page
         return 'hey';
@@ -48,6 +52,11 @@ class PostController extends Controller
 
     public function showCreateForm()
     {
+        // if (!auth()->check()) {
+        //     return redirect('/');
+        // }
+        Log::info('showCreateForm method accessed'); // Add this line
+
         return view('create-post');
         // return 'hello';
     }
